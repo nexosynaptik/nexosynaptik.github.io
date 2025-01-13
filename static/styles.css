@@ -191,16 +191,17 @@ footer p {
 }
 .search-bar {
     display: inline-block;
+    width: 60%; /* Ajusta el ancho de la barra de búsqueda */
 }
 .search-bar input {
     padding: 6px;
     font-size: 17px;
+    width: 100%; /* Hace que el input ocupe todo el ancho */
     border: none;
 }
 .cart {
     display: inline-block;
 }
 .cart-icon {
-    width: 24px;
-    height: 24px;
+    font-size: 24px; /* Tamaño del icono del carrito con Font Awesome */
 }
