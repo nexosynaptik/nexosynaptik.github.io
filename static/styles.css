@@ -192,7 +192,8 @@ footer p {
 }
 .search-bar {
     display: inline-block;
-    width: 90%; /* Ajusta el ancho de la barra de búsqueda */
+    width: 70%; /* Ajusta el ancho de la barra de búsqueda */
+    margin: 0 auto; /* Centrando la barra de búsqueda */
 }
 .search-bar input {
     padding: 6px;
@@ -201,6 +202,7 @@ footer p {
     border: none;
     background-color: white; /* Color de fondo blanco */
     color: black; /* Color del texto negro */
+    text-align: left; /* Alinea el texto a la izquierda */
 }
 .cart {
     display: inline-block;
