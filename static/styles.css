@@ -192,7 +192,7 @@ footer p {
 }
 .search-bar {
     display: inline-block;
-    width: 70%; /* Ajusta el ancho de la barra de búsqueda */
+    width: 90%; /* Ajusta el ancho de la barra de búsqueda */
     margin: 0 auto; /* Centrando la barra de búsqueda */
 }
 .search-bar input {
@@ -202,7 +202,7 @@ footer p {
     border: none;
     background-color: white; /* Color de fondo blanco */
     color: black; /* Color del texto negro */
-    text-align: left; /* Alinea el texto a la izquierda */
+    text-align: center; /* Centrar el texto */
 }
 .cart {
     display: inline-block;
@@ -212,5 +212,5 @@ footer p {
 }
 .cart-icon {
     font-size: 24px; /* Tamaño del icono del carrito con Font Awesome */
-    color: white; /* Color del icono en blanco */
+    color: #b6ff19; /* Color del icono en verde corporativo */
 }
