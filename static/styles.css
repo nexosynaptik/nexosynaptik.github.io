@@ -192,7 +192,7 @@ footer p {
 }
 .search-bar {
     display: inline-block;
-    width: 90%; /* Ajusta el ancho de la barra de búsqueda */
+    width: 80%; /* Ajusta el ancho de la barra de búsqueda */
     margin: 0 auto; /* Centrando la barra de búsqueda */
 }
 .search-bar input {
