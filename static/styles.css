@@ -199,8 +199,8 @@ footer p {
     font-size: 17px;
     width: 100%; /* Hace que el input ocupe todo el ancho */
     border: none;
-    background-color: #333; /* Color de fondo negro */
-    color: white; /* Color del texto blanco */
+    background-color: white; /* Color de fondo blanco */
+    color: black; /* Color del texto negro */
 }
 .cart {
     display: inline-block;
