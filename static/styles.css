@@ -58,7 +58,6 @@ p {
     justify-content: space-between; /* Espaciado adecuado entre los elementos */
     padding: 0 20px; /* Espaciado interno de la barra de navegación */
     box-sizing: border-box; /* Incluir el padding en el cálculo del ancho */
-    overflow: hidden; /* Evitar el desplazamiento horizontal */
 }
 
 .navbar ul {
@@ -197,9 +196,14 @@ footer p {
 .dropdown-content a:hover {
     background-color: #b6ff19; /* Color verde para hover */
 }
+.search-container {
+    flex-grow: 1; /* Hacer que el contenedor de la barra de búsqueda ocupe el espacio disponible */
+    max-width: 1200px; /* Ajustar el ancho máximo del contenedor de la barra de búsqueda */
+    margin-left: 20px; /* Espaciado a la izquierda del contenedor de la barra de búsqueda */
+    margin-right: 20px; /* Espaciado a la derecha del contenedor de la barra de búsqueda */
+}
 .search-bar {
-    flex-grow: 1; /* Hacer que la barra de búsqueda ocupe el espacio disponible */
-    max-width: 600px; /* Ajustar el ancho máximo de la barra de búsqueda */
+    width: 100%; /* Hacer que la barra de búsqueda ocupe todo el ancho del contenedor */
 }
 .search-bar input {
     padding: 6px;
