@@ -196,7 +196,7 @@ footer p {
 }
 .search-bar {
     flex-grow: 1; /* Hacer que la barra de búsqueda ocupe el espacio disponible */
-    max-width: 800px; /* Ajustar el ancho máximo de la barra de búsqueda */
+    max-width: 900px; /* Ajustar el ancho máximo de la barra de búsqueda */
     margin: 0 auto; /* Centrando la barra de búsqueda */
 }
 .search-bar input {
@@ -217,6 +217,7 @@ footer p {
     align-items: center; /* Alinear el icono y el texto verticalmente */
     position: absolute;
     right: 20px; /* Posicionar el icono del carrito en la esquina superior derecha */
+    top: 10px; /* Asegura que el icono del carrito esté en la barra de navegación */
 }
 .cart a {
     display: flex;
