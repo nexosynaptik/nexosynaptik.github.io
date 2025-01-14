@@ -198,9 +198,9 @@ footer p {
 }
 .search-container {
     flex-grow: 1; /* Hacer que el contenedor de la barra de búsqueda ocupe el espacio disponible */
-    max-width: 1200px; /* Ajustar el ancho máximo del contenedor de la barra de búsqueda */
-    margin-left: 20px; /* Espaciado a la izquierda del contenedor de la barra de búsqueda */
-    margin-right: 20px; /* Espaciado a la derecha del contenedor de la barra de búsqueda */
+    max-width: 500px; /* Ajustar el ancho máximo del contenedor de la barra de búsqueda */
+    margin-left: 57px; /* Espaciado a la izquierda del contenedor de la barra de búsqueda */
+    margin-right: 0px; /* Espaciado a la derecha del contenedor de la barra de búsqueda */
 }
 .search-bar {
     width: 100%; /* Hacer que la barra de búsqueda ocupe todo el ancho del contenedor */
