@@ -53,6 +53,10 @@ p {
 .navbar {
     background-color: #333;
     width: 100%; /* Mantener la barra de navegación ocupando todo el ancho */
+    display: flex;
+    align-items: center; /* Alinear verticalmente los elementos dentro de la barra */
+    justify-content: space-between; /* Espaciado adecuado entre los elementos */
+    padding: 0 20px; /* Espaciado interno de la barra de navegación */
 }
 
 .navbar ul {
@@ -60,12 +64,10 @@ p {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center; /* Centrar los elementos horizontalmente */
-    width: 100%; /* Distribuir los elementos en todo el ancho */
+    align-items: center; /* Alinear verticalmente los elementos dentro de la lista */
 }
 
 .navbar li {
-    flex-grow: 1; /* Hacer que los elementos crezcan para llenar el espacio disponible */
     text-align: center; /* Asegura que los elementos dentro de la lista estén centrados */
 }
 
@@ -191,9 +193,9 @@ footer p {
     background-color: #b6ff19; /* Color verde para hover */
 }
 .search-bar {
-    display: inline-block;
-    width: 80%; /* Ajusta el ancho de la barra de búsqueda */
+    flex-grow: 1; /* Hacer que la barra de búsqueda ocupe el espacio disponible */
     margin: 0 auto; /* Centrando la barra de búsqueda */
+    max-width: 800px; /* Ajustar el ancho máximo de la barra de búsqueda */
 }
 .search-bar input {
     padding: 6px;
@@ -203,13 +205,21 @@ footer p {
     background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con opacidad del 50% */
     color: white; /* Color del texto en blanco */
     text-align: center; /* Centrar el texto */
+    outline: none; /* Eliminar el borde de selección predeterminado */
+}
+.search-bar input:focus {
+    border: 2px solid #b6ff19; /* Borde verde al seleccionar la barra de búsqueda */
 }
 .cart {
     display: inline-flex;
     align-items: center; /* Alinear el icono y el texto verticalmente */
-    position: absolute;
-    top: 10px;
-    right: 10px; /* Asegura que el icono del carrito esté en la esquina superior derecha */
+    position: relative; /* Posición relativa para estar dentro de la barra de navegación */
+}
+.cart a {
+    display: flex;
+    align-items: center; /* Alinear el icono y el texto verticalmente */
+    text-decoration: none; /* Eliminar subrayado del enlace */
+    color: white; /* Color del texto en blanco */
 }
 .cart-icon {
     font-size: 24px; /* Tamaño del icono del carrito con Font Awesome */
