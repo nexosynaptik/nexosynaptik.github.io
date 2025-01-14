@@ -200,7 +200,7 @@ footer p {
     flex-grow: 1; /* Hacer que el contenedor de la barra de búsqueda ocupe el espacio disponible */
     max-width: 500px; /* Ajustar el ancho máximo del contenedor de la barra de búsqueda */
     margin-left: 57px; /* Espaciado a la izquierda del contenedor de la barra de búsqueda */
-    margin-right: 0px; /* Espaciado a la derecha del contenedor de la barra de búsqueda */
+    margin-right: 3px; /* Espaciado a la derecha del contenedor de la barra de búsqueda */
 }
 .search-bar {
     width: 100%; /* Hacer que la barra de búsqueda ocupe todo el ancho del contenedor */
