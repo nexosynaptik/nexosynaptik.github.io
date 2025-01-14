@@ -65,10 +65,12 @@ p {
     padding: 0;
     display: flex;
     align-items: center; /* Alinear verticalmente los elementos dentro de la lista */
+    width: 100%;
 }
 
 .navbar li {
     text-align: center; /* Asegura que los elementos dentro de la lista estén centrados */
+    margin: 0 10px; /* Espacio entre los elementos de la lista */
 }
 
 .navbar li a {
@@ -194,8 +196,8 @@ footer p {
 }
 .search-bar {
     flex-grow: 1; /* Hacer que la barra de búsqueda ocupe el espacio disponible */
-    margin: 0 auto; /* Centrando la barra de búsqueda */
     max-width: 800px; /* Ajustar el ancho máximo de la barra de búsqueda */
+    margin: 0 auto; /* Centrando la barra de búsqueda */
 }
 .search-bar input {
     padding: 6px;
@@ -213,7 +215,8 @@ footer p {
 .cart {
     display: inline-flex;
     align-items: center; /* Alinear el icono y el texto verticalmente */
-    position: relative; /* Posición relativa para estar dentro de la barra de navegación */
+    position: absolute;
+    right: 20px; /* Posicionar el icono del carrito en la esquina superior derecha */
 }
 .cart a {
     display: flex;
