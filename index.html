@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexo Synaptik</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+    <style>
+        body {
+            background-image: url('static/background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Estilos en línea para el pie de página */
+        footer {
+            background-color: black;
+            color: white;
+            padding: 15px 10px; /* Ajuste personalizado */
+            text-align: center;
+            font-size: 13px; /* Ajuste personalizado */
+            line-height: 1.2; /* Ajustar el interlineado para ser más compacto */
+        }
+
+        footer p {
+            margin: 3px 0; /* Reducir el margen para ser más compacto */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li class="menu">
+                    <a href="#"><span class="menu-icon">≡</span></a>
+                    <div class="dropdown-content">
+                        <a href="#">Hola, Identifícate</a>
+                        <a href="#">Ayuda y configuración</a>
+                        <a href="#">Tu cuenta</a>
+                        <a href="#">Servicio al cliente</a>
+                    </div>
+                </li>
+                <li class="search-container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Buscar...">
+                    </div>
+                </li>
+                <li class="cart">
+                    <a href="#"><i class="fas fa-shopping-cart cart-icon"></i><span class="cart-text">Carrito</span></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <img src="static/Logo.png" alt="Nexo Synaptik Logo" class="logo">
+    <div class="content">
+        <h1>¡Bienvenido a Nexo Synaptik!</h1>
+        <section id="help">
+            <div class="info-icon">
+                ℹ
+            </div>
+            <h2>¿Necesitas ayuda?</h2>
+            <p>Estamos a tu disposición</p>
+            <button onclick="window.location.href='/contacto';">¡Contáctanos!</button>
+        </section>
+    </div>
+    <footer style="background-color: black; color: white; padding: 15px 10px; text-align: center;">
+        <p style="font-size: 13px !important; line-height: 1.2 !important; margin: 3px 0 !important;">
+            Nexo Synaptik, C.A. © Copyright 2025. Todos los derechos reservados.
+        </p>
+        <p style="font-size: 13px !important; line-height: 1.2 !important; margin: 3px 0 !important;">
+            Navegadores recomendados para óptima visualización: Chrome, Firefox y Safari.
+        </p>
+    </footer>
+</body>
+</html>
