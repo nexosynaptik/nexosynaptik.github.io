@@ -175,15 +175,57 @@ footer p {
     font-size: 24px; /* Reducir el tamaño del icono del menú */
     cursor: pointer;
 }
+
+/* Estilos para el menú desplegable */
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #333; /* Fondo negro */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con 50% de opacidad */
+    /* background-color: #333; /* Fondo negro */
     color: white; /* Texto blanco */
-    min-width: 160px;
+    min-width: 300px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    /* Ajuste adicional para la posición vertical del menú */ 
+    top: 55px; /* Ajuste la posición vertical del menú desplegable */
+    /* right: 0px; /* Ajuste horizontal hacia la izquierda */
+    /* left: 0px; /* Ajuste horizontal hacia la derecha */
+    padding: 10px; /* Añadir padding para el contenido */
 }
+
+/* Estilos para el título */ 
+.dropdown-title { 
+    background-color: #c0c0c0; /* Fondo plateado */ 
+    padding: 10px; 
+    font-size: 18px; /* Ajustar tamaño de la fuente del título */ 
+    font-weight: bold; 
+    text-align: left; 
+    color: black; /* Color de la fuente del título en negro */
+}
+
+/* Estilos para el subtítulo */ 
+.dropdown-subtitle { 
+    background-color:#111; /* Fondo negro (antes con 50% opacidad, ya no) */
+    padding: 10px; 
+    font-size: 15px; /* Ajustar tamaño de la fuente del subtítulo */ 
+    text-align: left;
+    color: white; /* Texto en blanco */ 
+}
+
+/* Estilos para las opciones */ 
+.dropdown-option { 
+    background-color: #111; /* Fondo negro (antes con 50% opacidad, ya no) */
+    padding: 10px; 
+    font-size: 12px; /* Ajustar/reducir/aumentar tamaño de la fuente de las opciones */ 
+    text-align: left; 
+    cursor: pointer; 
+}
+
+.dropdown-option:hover { 
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro oscuro al pasar sobre la opción 50% de opacidad */  
+}
+
+/* Estilos para el menú */ 
 .menu:hover .dropdown-content {
     display: block;
 }
@@ -272,7 +314,6 @@ footer p {
         margin-top: 10px; /* Reducir el margen superior */
         width: 200px; /* Ajustar el tamaño del logo en móviles */
         display: block; /* Añadir esta línea */ 
-        /* margin: 0 auto; /* Centramos el logo horizontalmente */
         margin-left: auto;
         margin-right: auto;
     }
@@ -314,12 +355,12 @@ footer p {
 
     .cart-icon {
         font-size: 19px; /* Reducir el tamaño del icono del carrito */
-        margin-right: 10px; /* Aumentar el espacio entre el icono y la barra de búsqueda */
+        margin-right: 5px; /* Aumentar el espacio entre el icono y la barra de búsqueda */
     }
 
     .menu-icon {
-        font-size: 20px; /* Reducir el tamaño del icono del menú */
-        margin-left: 10px; /* Reducir el margen izquierdo del icono del menú */
+        font-size: 21px; /* Reducir el tamaño del icono del menú */
+        margin-left: 5px; /* Reducir el margen izquierdo del icono del menú */
     }
 
     .cart-text { /* Ajustar texto del carrito */
