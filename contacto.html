@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Nexo Synaptik</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="static/styles.css">
     <style>
         body {
@@ -31,12 +32,31 @@
     <header>
         <nav class="navbar">
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/contacto">Contacto</a></li>
+                <li class="menu">
+                    <a href="#"><span class="menu-icon">≡</span></a>
+                    <div class="dropdown-content">
+                        <!-- Placeholder por defecto -->
+                        <div class="dropdown-title">Hola, Identifícate</div>
+                        <div class="dropdown-subtitle">Ayuda y configuración</div>
+                        <div class="dropdown-option">Tu Cuenta</div>
+                        <div class="dropdown-option">Servicio al Cliente</div>
+                        <div class="dropdown-option">Identifícate</div> <!-- Futuro ajuste para nombre del usuario -->
+                    </div>
+                </li>
+                <li class="search-container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Buscar...">
+                    </div>
+                </li>
+                <li class="cart">
+                    <a href="#"><i class="fas fa-shopping-cart cart-icon"></i><span class="cart-text">Carrito</span></a>
+                </li>
             </ul>
         </nav>
     </header>
-    <img src="static/Logo.png" alt="Nexo Synaptik Logo" class="logo">
+    <!-- Actualiza el atributo href aquí -->
+    <!-- <a href="index.html"><img src="static/Logo.png" alt="Nexo Synaptik Logo" class="logo"></a> -->
+    <a href="/"><img src="static/Logo.png" alt="Nexo Synaptik Logo" class="logo"></a>
     <div class="content">
         <section id="contacto">
             <h2>Contacto</h2>

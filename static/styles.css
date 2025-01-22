@@ -216,7 +216,7 @@ footer p {
 .dropdown-option { 
     background-color: #111; /* Fondo negro (antes con 50% opacidad, ya no) */
     padding: 10px; 
-    font-size: 12px; /* Ajustar/reducir/aumentar tamaño de la fuente de las opciones */ 
+    font-size: 11px; /* Ajustar/reducir/aumentar tamaño de la fuente de las opciones */ 
     text-align: left; 
     cursor: pointer; 
 }
@@ -240,8 +240,8 @@ footer p {
 }
 .search-container {
     flex-grow: 1; /* Hacer que el contenedor de la barra de búsqueda ocupe el espacio disponible */
-    max-width: 500px; /* Ajustar el ancho máximo del contenedor de la barra de búsqueda */
-    margin-left: 57px; /* Espaciado a la izquierda del contenedor de la barra de búsqueda */
+    max-width: 580px; /* Ajustar el ancho máximo del contenedor de la barra de búsqueda (antes 500px) */
+    margin-left: 28px; /* Espaciado a la izquierda del contenedor de la barra de búsqueda (MOVER BARRA [anteriormente 57px]) */
     margin-right: 0px; /* Espaciado a la derecha del contenedor de la barra de búsqueda */
 }
 .search-bar {
@@ -261,7 +261,8 @@ footer p {
     border: 2px solid #b6ff19; /* Borde verde al seleccionar la barra de búsqueda */
 }
 .cart {
-    display: inline-flex;
+    /*display: inline-flex; */ /* Código anterior comentado */
+    display: flex;
     align-items: center; /* Alinear el icono y el texto verticalmente */
     margin-right: -20px; /* Ajustar el margen derecho del contenedor del carrito */
 }
@@ -279,6 +280,15 @@ footer p {
 .cart-text {
     color: white; /* Color del texto en blanco */
     font-size: 18px; /* Tamaño del texto */
+}
+
+/* Estilos para dispositivos grandes */
+@media only screen and (min-width: 768px) {
+    .cart-text {   
+        display: inline;
+        color: white;
+        font-size: 14px;
+    } 
 }
 
 /* Media Queries para pantallas medianas (tablets) */
@@ -299,6 +309,13 @@ footer p {
 
     .content {
         margin-top: 0; /* Reducir el margen superior del contenido */
+    }
+}
+
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 767px) {
+    .cart-text {
+        display: none; /* Ocultar el texto del carrito en dispositivos móviles */
     }
 }
 
