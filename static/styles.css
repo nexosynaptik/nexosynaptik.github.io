@@ -301,6 +301,7 @@ footer p {
 
     .cart-text {
         display: inline; /* Mostrar el texto del carrito en tablets */
+        font-size: 14px; /* Ajustar el tamaño del texto en tablets */
     }
     
     .logo {
