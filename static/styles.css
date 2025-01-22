@@ -299,6 +299,10 @@ footer p {
         margin-right: 0px;
     }
 
+    .cart-text {
+        display: inline; /* Mostrar el texto del carrito en tablets */
+    }
+    
     .logo {
         width: 300px; /* Restaurar el tamaño del logo en tablets */
     }
@@ -315,7 +319,8 @@ footer p {
 /* Estilos para dispositivos móviles */
 @media only screen and (max-width: 767px) {
     .cart-text {
-        display: none; /* Ocultar el texto del carrito en dispositivos móviles */
+        /* display: none; /* Ocultar el texto del carrito en dispositivos móviles */
+        display: inline; /* Mostrar el texto del carrito en dispositivos móviles */
     }
 }
 
