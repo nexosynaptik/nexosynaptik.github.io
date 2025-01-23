@@ -329,8 +329,10 @@ footer p {
 @media (max-width: 480px) {
     .search-container {
         max-width: 300px;
-        margin-left: 0; /* Alinear la barra de búsqueda al centro en móviles */
-        margin-right: 0;
+        margin-left: 100px; /* Alinear la barra de búsqueda al centro en móviles */ /* Antiguo ajuste */
+        margin-right: 115px; /* Antiguo ajuste */
+        flex-grow: 1; /* Nuevo ajuste */ /* Hacer que el contenedor de la barra de búsqueda ocupe el espacio disponible */
+        /* margin: 0 10px; /* Ajusta márgenes laterales */ /* Nuevo ajuste */
     }
 
     .logo {
@@ -349,13 +351,23 @@ footer p {
 
     /* Ajustar la navegación */ 
     .navbar ul { 
-        flex-direction: column; 
-        align-items: flex-start; 
+        flex-direction: row; 
+        /* align-items: flex-start; /* Antiguo ajuste */
+        align-items: center; /* Nuevo ajuste */
+        display: flex; /* Nuevo ajuste */
+        width: 100%; /* Nuevo ajuste */
+        padding: 0; /* Nuevo ajuste */
+        margin: 0; /* Nuevo ajuste */
+        justify-content: space-between; /* Asegura que los elementos estén bien distribuidos */ /* Nuevo ajuste */
+        list-style: none; /* Nuevo ajuste */
+
     } 
     
     .navbar li { 
         width: 100%; 
-        margin-bottom: 10px; 
+        margin-bottom: 10px;
+        display: flex; /* Nuevo ajuste */
+        align-items: center; /* Nuevo ajuste */ 
     } 
     
     .navbar li a { 
@@ -365,7 +377,8 @@ footer p {
     }
 
     .cart { 
-        margin-right: 10px; /* Ajustar margen derecho del carrito */ 
+        /* margin-right: 10px; /* Ajustar margen derecho del carrito */ 
+        margin: 0;
     }
 
     h1 {
@@ -378,12 +391,12 @@ footer p {
 
     .cart-icon {
         font-size: 19px; /* Reducir el tamaño del icono del carrito */
-        margin-right: 5px; /* Aumentar el espacio entre el icono y la barra de búsqueda */
+        margin-right: 0; /* Aumentar el espacio entre el icono y la barra de búsqueda */
     }
 
     .menu-icon {
         font-size: 21px; /* Reducir el tamaño del icono del menú */
-        margin-left: 5px; /* Reducir el margen izquierdo del icono del menú */
+        margin-left: 0; /* Reducir el margen izquierdo del icono del menú (antes en -45px) */
     }
 
     .cart-text { /* Ajustar texto del carrito */
@@ -393,10 +406,19 @@ footer p {
     .menu {
         display: flex; /* Asegurar que el menú ocupa el ancho total */
         margin-left: 50px; /* Ajustar margen izquierdo del menú */
+        margin: 0; /* Nuevo ajuste */
     }
 
     .search-bar {
-        width: 80%; /* Achicar la barra de búsqueda en móviles*/
+        width: 100%; /* Achicar la barra de búsqueda en móviles (anteriormente 90%) */
+    }
+
+    .search-bar input { /* Nuevo ajuste */
+        width: 100%;
+        padding: 6px;
+        font-size: 14px;
+        text-align: center;
+        /* justify-content: space-between; /* Intentando que se ajuste al ".search-container { max-width: 300px;" y no al texto */
     }
 
     #help {
@@ -414,5 +436,8 @@ footer p {
 
     .navbar {
         justify-content: space-between; /* Asegurar que la barra de navegación ocupe todo el ancho */
+        display: flex; /* Nuevo ajuste */
+        align-items: center; /* Nuevo ajuste */
+        padding: 0 10px; /* Ajusta el padding lateral*/ /* Nuevo ajuste */
     }
 }
