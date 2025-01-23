@@ -329,9 +329,9 @@ footer p {
 @media (max-width: 480px) {
     .search-container {
         max-width: 300px;
-        margin-left: 100px; /* Alinear la barra de búsqueda al centro en móviles */ /* Antiguo ajuste */
-        margin-right: 115px; /* Antiguo ajuste */
-        flex-grow: 1; /* Nuevo ajuste */ /* Hacer que el contenedor de la barra de búsqueda ocupe el espacio disponible */
+        margin-left: auto; /* Alinear la barra de búsqueda al centro en móviles */ /* Antiguo ajuste 100px */
+        margin-right: auto; /* Antiguo ajuste */
+        flex-grow: 1; /* Nuevo ajuste */ /* Hacer que el contenedor de la barra de búsqueda ocupe el espacio disponible 115px */
         /* margin: 0 10px; /* Ajusta márgenes laterales */ /* Nuevo ajuste */
     }
 
@@ -365,15 +365,15 @@ footer p {
     
     .navbar li { 
         width: 100%; 
-        margin-bottom: 10px;
+        margin-bottom: 0; /* Antes en 10px */
         display: flex; /* Nuevo ajuste */
         align-items: center; /* Nuevo ajuste */ 
     } 
     
     .navbar li a { 
-        padding: 12px; 
+        padding: 12px;
         width: 100%; 
-        text-align: left; /* Ajustar el texto a la izquierda */ 
+        text-align: center; /* Ajustar el texto a la izquierda */ 
     }
 
     .cart { 
@@ -418,7 +418,8 @@ footer p {
         padding: 6px;
         font-size: 14px;
         text-align: center;
-        /* justify-content: space-between; /* Intentando que se ajuste al ".search-container { max-width: 300px;" y no al texto */
+        margin-right: auto; /* Yo inventando */
+        margin-left: auto; /* Yo inventando */
     }
 
     #help {
