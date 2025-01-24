@@ -364,7 +364,6 @@ footer p {
     } 
     
     .navbar li { 
-        width: 100%; 
         margin-bottom: 0; /* Antes en 10px */
         display: flex; /* Nuevo ajuste */
         align-items: center; /* Nuevo ajuste */ 
@@ -374,6 +373,9 @@ footer p {
         padding: 12px;
         width: 100%; 
         text-align: center; /* Ajustar el texto a la izquierda */ 
+        margin-bottom: 0; /* Nuevo */
+        display: flex; /* Nuevo */
+        align-items: center; /* Nuevo */ 
     }
 
     .cart { 
@@ -390,7 +392,7 @@ footer p {
     }
 
     .cart-icon {
-        font-size: 19px; /* Reducir el tamaño del icono del carrito */
+        font-size: 15px; /* Reducir el tamaño del icono del carrito */
         margin-right: 0; /* Aumentar el espacio entre el icono y la barra de búsqueda */
     }
 
@@ -418,8 +420,10 @@ footer p {
         padding: 6px;
         font-size: 14px;
         text-align: center;
-        margin-right: auto; /* Yo inventando */
-        margin-left: auto; /* Yo inventando */
+        margin: 0; /* Elimina márgenes automáticos */
+        box-sizing: border-box; /* Incluye el padding y el border en el ancho total del input */
+        /* margin-right: auto; /* Yo inventando */
+        /* margin-left: auto; /* Yo inventando */
     }
 
     #help {
