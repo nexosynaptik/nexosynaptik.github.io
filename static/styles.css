@@ -83,8 +83,13 @@ p {
 }
 
 .navbar li a:hover {
-    background-color: #111;
+    background-color: transparent; /* Nuevo ensayo: aplicando nuevo color (anteriormente #111/#333 ) */
+    border-radius: 50%; /* NUEVO Ajusta el borde redondeado para íconos */
 }
+
+/* .navbar li a:hover {
+    background-color: #111;
+} */
 
 /* Estilos para las secciones */
 section {
@@ -387,7 +392,7 @@ footer p {
     }
 
     .navbar li a:hover {
-        background-color: #333; /* Nuevo ensayo: aplicando nuevo color (anteriormente #111 ) */
+        background-color: transparent; /* Nuevo ensayo: aplicando nuevo color (anteriormente #111/#333 ) */
         border-radius: 50%; /* NUEVO Ajusta el borde redondeado para íconos */
     }
 
