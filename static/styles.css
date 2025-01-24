@@ -328,7 +328,7 @@ footer p {
 /* Media Queries para pantallas pequeñas (móviles) */
 @media (max-width: 480px) {
     .search-container {
-        max-width: 300px;
+        max-width: 285px; /* Anteriormente 300px (ajuste perfecto) */
         margin-left: auto; /* Alinear la barra de búsqueda al centro en móviles */ /* Antiguo ajuste 100px */
         margin-right: auto; /* Antiguo ajuste */
         flex-grow: 1; /* Nuevo ajuste */ /* Hacer que el contenedor de la barra de búsqueda ocupe el espacio disponible 115px */
@@ -367,15 +367,28 @@ footer p {
         margin-bottom: 0; /* Antes en 10px */
         display: flex; /* Nuevo ajuste */
         align-items: center; /* Nuevo ajuste */ 
+        /* margin: 0; /* Elimina margen inferior */ /* Nuevo ajuste desconocido */
     } 
     
     .navbar li a { 
         padding: 12px;
         width: 100%; 
         text-align: center; /* Ajustar el texto a la izquierda */ 
-        margin-bottom: 0; /* Nuevo */
-        display: flex; /* Nuevo */
-        align-items: center; /* Nuevo */ 
+        margin-bottom: 0; /* Nuevo milagroso */
+        /* display: flex; /* Nuevo milagroso */
+        align-items: center; /* Nuevo milagroso */ 
+/*Nuevos ajustes propuestos para reducir el area de selección negra al rededor de los iconos de la barra de navegación */
+/* Practicamente innecesarios ya que estaban bien como los tenía */
+        /* padding: 0; /* Elimina padding para ajustar el área activa */
+        display: inline-flex; /* Asegura que el contenido se ajuste al tamaño del icono */
+        /* align-items: center; */
+        justify-content: center;
+        text-decoration: none; /* Elimina subrayado del enlace */
+    }
+
+    .navbar li a:hover {
+        background-color: #333; /* Nuevo ensayo: aplicando nuevo color (anteriormente #111 ) */
+        border-radius: 50%; /* NUEVO Ajusta el borde redondeado para íconos */
     }
 
     .cart { 
@@ -433,10 +446,17 @@ footer p {
     }
 
     footer {
-        font-size: 9px; /* Reducir el tamaño de la fuente del pie de página */
+        font-size: 9px !important; /* Reducir el tamaño de la fuente del pie de página */ /* Nuevo ajuste con !important */
         line-height: 1.2; /* Ajustar el interlineado para ser más compacto */
         width: 100%; /* Asegura que el contenedor ocupe el ancho total disponible */
         padding: 10px;
+    }
+
+    /* Nuevo ajuste con !important */
+    footer p {
+        font-size: 9px !important; /* Aplica !important también a los párrafos dentro del pie de página */
+        line-height: 1.2 !important;
+        margin: 3px 0 !important;
     }
 
     .navbar {
@@ -444,5 +464,6 @@ footer p {
         display: flex; /* Nuevo ajuste */
         align-items: center; /* Nuevo ajuste */
         padding: 0 10px; /* Ajusta el padding lateral*/ /* Nuevo ajuste */
+        /* background-color: #333; /* Mantén el fondo consistente */ /* Nuevo ajuste */
     }
 }
