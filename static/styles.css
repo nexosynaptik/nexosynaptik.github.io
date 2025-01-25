@@ -458,7 +458,7 @@ footer p {
     }
 
     /* Nuevo ajuste con !important */
-    footer p {
+    footer .mobile-footer {
         font-size: 9px !important; /* Aplica !important también a los párrafos dentro del pie de página */
         line-height: 1.2 !important;
         margin: 3px 0 !important;
