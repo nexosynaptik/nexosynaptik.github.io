@@ -501,8 +501,19 @@ footer p {
         align-items: center; /* Nuevo ajuste */
         padding: 0 10px; /* Ajusta el padding lateral*/ /* Nuevo ajuste */
         /* background-color: #333; /* Mantén el fondo consistente */ /* Nuevo ajuste */
-    }   
-}
+    }
+    
+    /* Estilos específicos para contenido en dispositivos móviles */
+    .content-paragraph.mobile-content-paragraph {
+        font-size: 16px; /* Ajustar el tamaño del texto en móviles */
+        line-height: 1.4;
+    }
+
+    .mobile-content-title {
+        font-size: 18px; /* Ajustar el tamaño de los títulos en móviles */
+        line-height: 1.4;
+    }
+}    
 
 /* Media Queries para pantallas grandes (laptops y tablets) */
 @media (min-width: 481px) {
