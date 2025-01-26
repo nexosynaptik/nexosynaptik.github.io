@@ -163,7 +163,7 @@ section p {
     font-size: 24px; /* Agrandar el signo de información */
     margin-bottom: 20px; /* Separar el círculo del texto */
 }
-
+/* Estilos específicos para el botón en ajustes generales */
 #help button {
     background-color: #b6ff19; /* Color verde */
     color: black; /* Color del texto en negro */
@@ -518,6 +518,27 @@ footer p {
         font-size: 18px; /* Ajustar el tamaño de los títulos en móviles */
         line-height: 1.4;
     }
+
+    .mobile-button {
+        font-size: 14px !important;
+        padding: 8px 16px !important;
+        margin-top: 10px !important;
+        /* Aquí podrías agregar más estilos específicos para móviles, como cambiar el color */
+    }
+
+    .mobile-info-icon {
+        width: 50px !important; /* Mantener el tamaño actual */
+        height: 50px !important; /* Mantener el tamaño actual */
+        font-size: 26px !important; /* Mantener el tamaño actual */ /* Agrandar el signo de información */
+        margin-bottom: 5px !important; /* Separar el círculo del texto */
+        color: black !important; /* Color del texto */
+        border: 2px solid black !important; /* Borde negro */
+        border-radius: 50% !important; /* Hacer que el borde sea un círculo */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center!important;
+        /* Aquí podrías agregar más estilos específicos para pantallas grandes, si lo deseas en el futuro */
+    }
 }    
 
 /* Media Queries para pantallas grandes (laptops y tablets) */
@@ -532,4 +553,25 @@ footer p {
         font-size: 24px; /* Ajustar el tamaño del título en pantallas grandes */
         line-height: 1.5;
     }
+
+    .large-button {
+        font-size: 18px !important; /* Mantener el tamaño de fuente actual */
+        padding: 10px 20px !important; /* Mantener el padding actual */
+        margin-top: 20px !important;
+        /* Aquí podrías agregar más estilos específicos para pantallas grandes, si lo deseas en el futuro */
+    }
+
+    .large-info-icon {
+        width: 50px !important; /* Mantener el tamaño actual */
+        height: 50px !important; /* Mantener el tamaño actual */
+        font-size: 24px !important; /* Mantener el tamaño actual */ /* Agrandar el signo de información */
+        margin-bottom: 20px !important; /* Separar el círculo del texto */
+        color: black !important; /* Color del texto */
+        border: 2px solid black !important; /* Borde negro */
+        border-radius: 50% !important; /* Hacer que el borde sea un círculo */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center!important;
+        /* Aquí podrías agregar más estilos específicos para pantallas grandes, si lo deseas en el futuro */
+    } 
 }
