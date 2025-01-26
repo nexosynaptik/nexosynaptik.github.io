@@ -45,8 +45,26 @@ h1 {
 }
 
 p {
-    font-size: 24px; /* Ajusta el tamaño del texto del slogan */
+    font-size: 13px; /* Ajusta el tamaño del texto del slogan (parece que se equivocó y es el texto del footer) */
     margin-top: 0; /* Espaciado superior del párrafo */
+}
+
+/* Estilos generales */
+.footer-custom {
+    background-color: black;
+    color: white;
+    padding: 15px 10px;
+    text-align: center;
+}
+
+.footer-custom p {
+    margin: 3px 0;
+}
+
+/* Estilos específicos para contenido debajo de los títulos */
+.content-paragraph {
+    font-size: 20px; /* Ajusta el tamaño del texto debajo de los títulos */
+    line-height: 1.5; /* Ajustar el interlineado */
 }
 
 /* Estilos para la barra de navegación */
@@ -451,18 +469,31 @@ footer p {
     }
 
     footer {
-        font-size: 9px !important; /* Reducir el tamaño de la fuente del pie de página */ /* Nuevo ajuste con !important */
+        font-size: 10px !important; /* Reducir el tamaño de la fuente del pie de página */ /* Nuevo ajuste con !important */
         line-height: 1.2; /* Ajustar el interlineado para ser más compacto */
         width: 100%; /* Asegura que el contenedor ocupe el ancho total disponible */
         padding: 10px;
     }
 
     /* Nuevo ajuste con !important */
-    footer .mobile-footer {
-        font-size: 9px !important; /* Aplica !important también a los párrafos dentro del pie de página */
+    /* footer .mobile-footer { */
+        /* font-size: 10px !important; /* Aplica !important también a los párrafos dentro del pie de página */
+        /* line-height: 1.2 !important;
+        /* margin: 3px 0 !important;
+    /* } */
+
+    /* footer.mobile-footer p { */
+        /* font-size: 10px !important; /* Usa !important para asegurar que este estilo tenga prioridad */
+        /* line-height: 1.2 !important;
+        /* margin: 3px 0 !important;
+    /* } */
+
+    /* Ajuste específico para los párrafos del pie de página en dispositivos móviles */
+    .footer-custom .footer-paragraph {
+        font-size: 10px !important; /* Usa !important para asegurar que este estilo tenga prioridad */
         line-height: 1.2 !important;
-        margin: 3px 0 !important;
-    }
+        margin: 3px 0 !important
+    }    
 
     .navbar {
         justify-content: space-between; /* Asegurar que la barra de navegación ocupe todo el ancho */
@@ -470,5 +501,14 @@ footer p {
         align-items: center; /* Nuevo ajuste */
         padding: 0 10px; /* Ajusta el padding lateral*/ /* Nuevo ajuste */
         /* background-color: #333; /* Mantén el fondo consistente */ /* Nuevo ajuste */
+    }   
+}
+
+/* Media Queries para pantallas grandes (laptops y tablets) */
+@media (min-width: 481px) {
+    .footer-custom .footer-paragraph-large {
+        font-size: 13px; /* Ajustar el tamaño del texto del pie de página en pantallas grandes */
+        line-height: 1.2;
+        margin: 3px 0;
     }
 }
