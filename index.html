@@ -35,14 +35,23 @@
                 <li class="menu">
                     <a href="#"><span class="menu-icon">≡</span></a>
                     <div class="dropdown-content">
+                        <!-- Botón de cerrar -->
+                        <span class="close-btn">&times;</span>                        
                         <!-- Placeholder por defecto -->
                         <div class="dropdown-title">Hola, Identifícate</div>
+                        <!-- Nueva sección Nexo Synaptik Store como subtítulo -->
+                        <div class="dropdown-subtitle">Nexo Synaptik Store</div>
+                        <div class="dropdown-option">Productos</div>
+                        <div class="dropdown-option">Servicios</div>
+                        <!-- Ayuda y configuración -->
                         <div class="dropdown-subtitle">Ayuda y configuración</div>
                         <div class="dropdown-option">Tu Cuenta</div>
                         <div class="dropdown-option">Servicio al Cliente</div>
                         <div class="dropdown-option">Identifícate</div> <!-- Futuro ajuste para nombre del usuario -->
                     </div>
                 </li>
+                <!-- Nuevo -->
+                <div class="overlay"></div> 
                 <li class="search-container">
                     <div class="search-bar">
                         <input type="text" placeholder="Buscar en Nexo Synaptik">
@@ -62,7 +71,7 @@
             <div class="info-icon mobile-info-icon large-info-icon">
                 ℹ
             </div>
-            <!-- Aquí se crea una clase espeficica para sus calidades particulares" -->
+            <!-- Aquí se crea una clase especifica para sus calidades particulares" -->
             <h2 class="help-title help-title-large">¿Necesitas ayuda?</h2>
             <!-- Aquí el titulo está contectado a los demás titulos
             <h2 class="content-title mobile-content-title">¿Necesitas ayuda?</h2>
@@ -86,6 +95,9 @@
         -->
     </div>
     <!-- 3 -->
+    <!-- Capa oscura para el desenfoque -->
+    <!-- Nuevo -->
+    <div class="overlay"></div>     
     <footer class="footer-custom mobile-footer" style="background-color: black; color: white; padding: 15px 10px; text-align: center;">
         <p class="footer-paragraph footer-paragraph-large" style="line-height: 1.2 !important; margin: 3px 0 !important;">
             Nexo Synaptik, C.A. © Copyright 2025. Todos los derechos reservados.
@@ -93,6 +105,34 @@
         <p class="footer-paragraph footer-paragraph-large" style="line-height: 1.2 !important; margin: 3px 0 !important;">
             Navegadores recomendados para óptima visualización: Chrome, Firefox y Safari.
         </p>
-    </footer>  
+    </footer>
+    <!-- Al final del body, antes de cerrar la etiqueta (nuevo) -->
+    <script>
+        document.querySelector('.menu-icon').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.querySelector('.menu').classList.toggle('active');
+        });
+    
+        document.querySelector('.overlay').addEventListener('click', function() {
+            document.querySelector('.menu').classList.remove('active');
+        });
+    
+        document.querySelector('.close-btn').addEventListener('click', function() {
+            document.querySelector('.menu').classList.remove('active');
+        });
+    </script>  
+<!-- Al final del body, antes de cerrar la etiqueta (antiguo) -->
+    <!--
+    <script>
+        document.querySelector('.menu-icon').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.querySelector('.menu').classList.toggle('active');
+        });
+    
+        document.querySelector('.overlay').addEventListener('click', function() {
+            document.querySelector('.menu').classList.remove('active');
+        });
+    </script>
+    -->      
 </body>
 </html>
