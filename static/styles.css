@@ -250,7 +250,7 @@ footer p {
 }
 
 .dropdown-option:hover { 
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro oscuro al pasar sobre la opción 50% de opacidad */  
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro oscuro al pasar sobre la opción 50% de opacidad.Y rgba(182, 255, 25, 0.2); Verde */  
 }
 
 /* Estilos para el menú */ 
@@ -539,6 +539,11 @@ footer p {
         justify-content: center!important;
         /* Aquí podrías agregar más estilos específicos para pantallas grandes, si lo deseas en el futuro */
     }
+
+    .help-title {
+        font-size: 24px !important; /* Ajustar el tamaño del título "¿Necesitas ayuda?" en móviles */
+        line-height: 1.4;
+    }
 }    
 
 /* Media Queries para pantallas grandes (laptops y tablets) */
@@ -573,5 +578,10 @@ footer p {
         align-items: center !important;
         justify-content: center!important;
         /* Aquí podrías agregar más estilos específicos para pantallas grandes, si lo deseas en el futuro */
-    } 
+    }
+    
+    .help-title-large {
+        font-size: 24px !important; /* Mantener el tamaño actual */
+        line-height: 1.5; /* Mantener el interlineado actual */
+    }
 }
