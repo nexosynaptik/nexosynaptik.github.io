@@ -11,6 +11,8 @@
             background-image: url('static/background.jpg');
             background-size: cover;
             background-position: center;
+            margin: 0; /* New */
+            padding: 0; /* New */
         }
 
         /* Estilos en línea para el pie de página */
@@ -21,6 +23,8 @@
             text-align: center;
             font-size: 13px; /* Ajuste personalizado */
             line-height: 1.2; /* Ajustar el interlineado para ser más compacto */
+            position: relative; /* New */
+            z-index: 1; /* New */
         }
 
         footer p {
@@ -32,26 +36,125 @@
     <header>
         <nav class="navbar">
             <ul>
-                <li class="menu">
-                    <a href="#"><span class="menu-icon">≡</span></a>
+                <!-- Movido el ícono fuera del contenedor -->
+                <span class="menu-icon" onclick="controlMenu('abrirPrincipal')">≡</span>
+                <!-- Nuevo -->
+                <!-- <li class="menu-container"> -->
+                <div class="menu-container">
+                    <!-- Menú Principal -->
+                    <!-- Botón del menú principal -->
+
+                    <!-- <a href="#"><span class="menu-icon">≡</span></a> -->
                     <div class="dropdown-content">
                         <!-- Botón de cerrar -->
-                        <span class="close-btn">&times;</span>                        
+                        <span class="close-btn">&times;</span>
                         <!-- Placeholder por defecto -->
                         <div class="dropdown-title">Hola, Identifícate</div>
                         <!-- Nueva sección Nexo Synaptik Store como subtítulo -->
                         <div class="dropdown-subtitle">Nexo Synaptik Store</div>
-                        <div class="dropdown-option">Productos</div>
-                        <div class="dropdown-option">Servicios</div>
+                        <div class="dropdown-option" onclick="openSubMenu('productos')">Productos</div>
+                        <div class="dropdown-option" onclick="openSubMenu('servicios')">Servicios</div>
+                        <!-- Nueva sección Nexo Synaptik Academy como subtítulo -->
+                        <div class="dropdown-subtitle">Nexo Synaptik Academy</div>
+                        <div class="dropdown-option" onclick="openSubMenu('cursos-online')">Cursos Online</div>
+                        <div class="dropdown-option" onclick="openSubMenu('talleres-y-seminarios')">Talleres y Seminarios</div>
+                        <div class="dropdown-option" onclick="openSubMenu('mentoria-personalizada')">Mentoría Personalizada</div>
+                        <div class="dropdown-option" onclick="openSubMenu('material-educativo')">Material Educativo</div>
+                        <div class="dropdown-option" onclick="openSubMenu('comunidad-n-s')">Comunidad Nexo Synaptik</div>
                         <!-- Ayuda y configuración -->
                         <div class="dropdown-subtitle">Ayuda y configuración</div>
                         <div class="dropdown-option">Tu Cuenta</div>
                         <div class="dropdown-option">Servicio al Cliente</div>
                         <div class="dropdown-option">Identifícate</div> <!-- Futuro ajuste para nombre del usuario -->
                     </div>
-                </li>
-                <!-- Nuevo -->
-                <div class="overlay"></div> 
+
+                    <!-- Submenú Productos -->
+                    <div id="sub-menu-productos" class="sub-menu">
+                        <span class="close-btn" onclick="controlMenu('cerrarTodo')">&times;</span>
+                        <div class="dropdown-title">Hola, Identifícate</div>
+                        <div class="back-to-main" onclick="controlMenu('volver')">&#129136; MENÚ PRINCIPAL</div>
+                        <div class="dropdown-subtitle">Productos</div>
+                        <div class="dropdown-option">Kits de Setup para Profesionales</div>
+                        <div class="dropdown-option">Software y Herramientas</div>
+                        <div class="dropdown-option">Licencias</div>
+                        <div class="dropdown-option">Herramientas Físicas</div>
+                        <div class="dropdown-option">Herramientas de IA</div>
+                    </div>
+
+                    <!-- Submenú Servicios -->
+                    <div id="sub-menu-servicios" class="sub-menu">
+                        <span class="close-btn" onclick="controlMenu('cerrarTodo')">&times;</span>
+                        <div class="dropdown-title">Hola, Identifícate</div>
+                        <div class="back-to-main" onclick="controlMenu('volver')">&#129136; MENÚ PRINCIPAL</div>
+                        <div class="dropdown-subtitle">Servicios</div>
+                        <div class="dropdown-option">Análisis de Datos</div>
+                        <div class="dropdown-option">Consultoría</div>
+                        <div class="dropdown-option">Desarrollo de Software</div>
+                        <div class="dropdown-option">Soporte Técnico</div>
+                        <div class="dropdown-option">Mantenimiento de Dashboards y Reportes</div>
+                    </div>
+
+                    <!-- Submenú Cursos Online -->
+                    <div id="sub-menu-cursos-online" class="sub-menu">
+                        <span class="close-btn" onclick="controlMenu('cerrarTodo')">&times;</span>
+                        <div class="dropdown-title">Hola, Identifícate</div>
+                        <div class="back-to-main" onclick="controlMenu('volver')">&#129136; MENÚ PRINCIPAL</div>
+                        <div class="dropdown-subtitle">Cursos Online</div>
+                        <div class="dropdown-option">Cursos Básicos</div>
+                        <div class="dropdown-option">Cursos Avanzados</div>
+                        <div class="dropdown-option">Cursos Certificados</div>
+                    </div>
+
+                    <!-- Submenú Talleres y Seminarios -->
+                    <div id="sub-menu-talleres-y-seminarios" class="sub-menu">
+                        <span class="close-btn" onclick="controlMenu('cerrarTodo')">&times;</span>
+                        <div class="dropdown-title">Hola, Identifícate</div>
+                        <div class="back-to-main" onclick="controlMenu('volver')">&#129136; MENÚ PRINCIPAL</div>
+                        <div class="dropdown-subtitle">Talleres y Seminarios</div>
+                        <div class="dropdown-option">Talleres Prácticos</div>
+                        <div class="dropdown-option">Seminarios Especializados</div>
+                        <div class="dropdown-option">Eventos en Vivo</div>
+                    </div>
+
+                    <!-- Submenú Mentoría Personalizada -->
+                    <div id="sub-menu-mentoria-personalizada" class="sub-menu">
+                        <span class="close-btn" onclick="controlMenu('cerrarTodo')">&times;</span>
+                        <div class="dropdown-title">Hola, Identifícate</div>
+                        <div class="back-to-main" onclick="controlMenu('volver')">&#129136; MENÚ PRINCIPAL</div>
+                        <div class="dropdown-subtitle">Mentoría Personalizada</div>
+                        <div class="dropdown-option">Mentoría en Herramientas</div>
+                        <div class="dropdown-option">Mentoría en Proyectos</div>
+                        <div class="dropdown-option">Mentoría en Carrera</div>
+                    </div>
+
+                    <!-- Submenú Material Educativo -->
+                    <div id="sub-menu-material-educativo" class="sub-menu">
+                        <span class="close-btn" onclick="controlMenu('cerrarTodo')">&times;</span>
+                        <div class="dropdown-title">Hola, Identifícate</div>
+                        <div class="back-to-main" onclick="controlMenu('volver')">&#129136; MENÚ PRINCIPAL</div>
+                        <div class="dropdown-subtitle">Material Educativo</div>
+                        <div class="dropdown-option">Ebooks y Guías</div>
+                        <div class="dropdown-option">Plantillas y Scripts</div>
+                        <div class="dropdown-option">Blog Educativo</div>
+                    </div>
+
+                    <!-- Submenú Comunidad Nexo Synaptik -->
+                    <div id="sub-menu-comunidad-n-s" class="sub-menu">
+                        <span class="close-btn" onclick="controlMenu('cerrarTodo')">&times;</span>
+                        <div class="dropdown-title">Hola, Identifícate</div>
+                        <div class="back-to-main" onclick="controlMenu('volver')">&#129136; MENÚ PRINCIPAL</div>
+                        <div class="dropdown-subtitle">Comunidad Nexo Synaptik</div>
+                        <div class="dropdown-option">Foros de Discusión</div>                        
+                        <div class="dropdown-option">Retos y Competencias</div>
+                        <div class="dropdown-option">Networking</div>
+                    </div>
+                </div>
+                <!-- </li> -->
+                 
+                <!-- Overlay -->
+                <div class="overlay"></div>
+                <!-- El de arriba llega hasta aquí -->
+                                
                 <li class="search-container">
                     <div class="search-bar">
                         <input type="text" placeholder="Buscar en Nexo Synaptik">
@@ -78,26 +181,11 @@
             -->
             <p class="content-paragraph mobile-content-paragraph">Estamos a tu disposición</p>
             <button class="mobile-button large-button" onclick="window.location.href='/contacto';">¡Contáctanos!</button>
-            <!--
-            <button onclick="window.location.href='/contacto';">¡Contáctanos!</button>
-            -->
         </section>       
-        <!--
-        Antiguo
-        <section id="help">
-            <div class="info-icon">
-                ℹ
-            </div>
-            <h2>¿Necesitas ayuda?</h2>
-            <p class="content-paragraph">Estamos a tu disposición</p>
-            <button onclick="window.location.href='/contacto';">¡Contáctanos!</button>
-        </section> 
-        -->
     </div>
-    <!-- 3 -->
     <!-- Capa oscura para el desenfoque -->
-    <!-- Nuevo -->
-    <div class="overlay"></div>     
+    <div class="overlay"></div>
+
     <footer class="footer-custom mobile-footer" style="background-color: black; color: white; padding: 15px 10px; text-align: center;">
         <p class="footer-paragraph footer-paragraph-large" style="line-height: 1.2 !important; margin: 3px 0 !important;">
             Nexo Synaptik, C.A. © Copyright 2025. Todos los derechos reservados.
@@ -106,33 +194,98 @@
             Navegadores recomendados para óptima visualización: Chrome, Firefox y Safari.
         </p>
     </footer>
-    <!-- Al final del body, antes de cerrar la etiqueta (nuevo) -->
     <script>
-        document.querySelector('.menu-icon').addEventListener('click', function(event) {
-            event.preventDefault();
-            document.querySelector('.menu').classList.toggle('active');
+        // Estados centralizados
+        let menuAbierto = null;
+
+        // Modificar la función controlMenu
+        function controlMenu(accion, menuId = null) {
+            const overlay = document.querySelector('.overlay');
+            const menuPrincipal = document.querySelector('.dropdown-content');
+            const submenus = { // Todos los submenús
+                productos: document.getElementById('sub-menu-productos'),
+                servicios: document.getElementById('sub-menu-servicios'),
+                'cursos-online': document.getElementById('sub-menu-cursos-online'),
+                'talleres-y-seminarios': document.getElementById('sub-menu-talleres-y-seminarios'),
+                'mentoria-personalizada': document.getElementById('sub-menu-mentoria-personalizada'),
+                'material-educativo': document.getElementById('sub-menu-material-educativo'),
+                'comunidad-n-s': document.getElementById('sub-menu-comunidad-n-s')
+            };
+
+            switch(accion) {
+                /* case 'abrirPrincipal':
+                    menuPrincipal.classList.add('active');
+                    overlay.style.display = 'block';
+                    break; */ // Last code
+
+                // Avance 1
+                /* case 'abrirPrincipal':
+                    // Ocultar todos los submenús primero
+                    Object.values(submenus).forEach(menu => menu.classList.remove('active'));
+                    // Activar solo el contenedor principal
+                    document.querySelector('.menu-container').classList.add('active');
+                    overlay.style.display = 'block';
+                    break // New code */
+
+                // Avance 2
+                case 'abrirPrincipal':
+                    document.querySelector('.menu-container').classList.add('active');
+                    overlay.style.display = 'block';
+                    break; // New code 2 funciona tambien
+
+                case 'abrirSubmenu':
+                    if (!menuId || !submenus[menuId]) return;
+                    // Cerrar submenús anteriores
+                    Object.values(submenus).forEach(menu => menu.classList.remove('active'));
+                    submenus[menuId].classList.add('active');
+                    break;
+
+                case 'volver':
+                    Object.values(submenus).forEach(menu => menu.classList.remove('active'));
+                    break;
+
+                case 'cerrarTodo':
+                    // New
+                    document.querySelector('.menu-container').classList.remove('active');
+                    // Last
+                    /* menuPrincipal.classList.remove('active'); */
+                    Object.values(submenus).forEach(menu => menu.classList.remove('active'));
+                    overlay.style.display = 'none';
+                    break;
+            }
+        }
+
+        // Event Listeners
+        document.querySelector('.menu-icon').addEventListener('click', (e) => {
+            e.preventDefault();
+            controlMenu('abrirPrincipal');
         });
-    
-        document.querySelector('.overlay').addEventListener('click', function() {
-            document.querySelector('.menu').classList.remove('active');
+        
+        document.querySelector('.overlay').addEventListener('click', () => {
+            controlMenu('cerrarTodo');
         });
-    
-        document.querySelector('.close-btn').addEventListener('click', function() {
-            document.querySelector('.menu').classList.remove('active');
+
+        // Event Listeners actualizados
+        document.querySelectorAll('.close-btn').forEach(boton => {
+            boton.addEventListener('click', () => controlMenu('cerrarTodo'));
         });
-    </script>  
-<!-- Al final del body, antes de cerrar la etiqueta (antiguo) -->
-    <!--
-    <script>
-        document.querySelector('.menu-icon').addEventListener('click', function(event) {
-            event.preventDefault();
-            document.querySelector('.menu').classList.toggle('active');
+
+        document.querySelectorAll('.back-to-main').forEach(boton => {
+            boton.addEventListener('click', (e) => {
+                e.stopPropagation(); // Evitar propagación
+                controlMenu('volver');
+            });
         });
-    
-        document.querySelector('.overlay').addEventListener('click', function() {
-            document.querySelector('.menu').classList.remove('active');
-        });
-    </script>
-    -->      
+        
+        // Funciones públicas para HTML
+        // Función para abrir submenús desde HTML
+        function openSubMenu(menuId) {
+            controlMenu('abrirSubmenu', menuId);
+        }
+        
+        function closeSubMenu() {
+            controlMenu('cerrarTodo');
+        }
+    </script>                   
 </body>
 </html>

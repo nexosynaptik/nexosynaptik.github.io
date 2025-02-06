@@ -200,49 +200,69 @@ footer p {
     display: inline-block;
 }
 .menu-icon {
+    position: relative !important; 
     font-size: 24px; /* Reducir el tamaño del icono del menú */
     cursor: pointer;
+    /* font-size: 2rem; */
+    /* margin-left: 0; */ /* 5px + 16px = 21px. Sin embargo, 16px o 20px por padding lateral del navbar 0 20px... */
+    z-index: 790; /* Antes 1000 */
+    padding-right: 66px; /* 16px (padding) + 5px (espaciado entre el texto "Carrito" y el "Font Awesome") = 21 px (compensatorio) + 45px aproximado de la palabra "Carrito" */
+}
+
+/* Contenedor principal del menú */
+.menu-container {
+    position: fixed; 
+    left: 0; 
+    left: -300px; 
+    top: 0;
+    height: 100%;
+    width: 300px; 
+    background: #111;
+    z-index: 900;
+    transition: left 0.3s ease; 
+    overflow: hidden; /* Nuevo: Oculta contenido fuera del contenedor */ 
+}
+
+/* Ocultar .menu-container inicialmente */
+.menu-container:not(.active) {
+    visibility: hidden !important; /* Oculta sin romper transiciones */
+    left: -300px !important; /* Posición inicial fuera de pantalla */
+}
+
+.menu-container.active {  /* New code */
+    left: 0;
 }
 
 /* Estilos generales del menú desplegable */
+/* Contenido del menú principal */
 .dropdown-content {
-    display: none;
-    position: fixed;
-    /* position: absolute; */
-    background-color:#111; /* rgba(0, 0, 0, 0.5); /* Fondo negro con 50% de opacidad */
-    /* background-color: white; /* Fondo blanco para el menú desplegable */
-    /* background-color: #333; /* Fondo negro */
-    color: white; /* Texto blanco */
-    /* color: black; */
-    min-width: 300px; /* Ajustar el ancho del menú desplegable */
-    height: 100%; /* Ocupar toda la altura de la pantalla */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    /* z-index: 1; */
-    z-index: 10;
-    /* Ajuste adicional para la posición vertical del menú */ 
+    position: fixed; 
+    position: absolute; /* Cambiado de fixed a absolute */ 
     top: 0;
-    left: -300px; /* Inicialmente fuera de la pantalla (new) */
-    /* left: 0; (last) */
-    /* top: 55px; /* Ajuste la posición vertical del menú desplegable */
-    /* right: 0px; /* Ajuste horizontal hacia la izquierda */
-    /* left: 0px; /* Ajuste horizontal hacia la derecha */
-    /* padding: 10px; /* Añadir padding para el contenido */
-    /* padding: 20px; */
-    padding: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: #111;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+    z-index: 900;
+    overflow-y: auto;
+    color: white; /* Texto blanco */
+    padding: 0; 
     overflow-y: auto; /* Habilitar barra de desplazamiento vertical si es necesario */
-    transition: left 0.3s ease; /* Añadir transición para deslizamiento (new) */
+    visibility: inherit !important;
+    transform: none !important; /* Eliminar transformaciones conflictivas */ 
 }
 
 /* Estilos para el botón de cerrar */
 .close-btn {
     font-size: 24px;
     color: #b6ff19;
+    background: rgba(0, 0, 0, 0.7);
     position: absolute;
     top: 5px;
     right: 10px;
     cursor: pointer;
-    /* Nuevos experimentales */
-    border: 1px solid white; /* Borde negro */
+    border: 1px solid black; /* Borde negro */
     border-radius: 20%; /* Hacer que el borde sea un círculo */
     width: 30px;
     height: 30px;
@@ -251,10 +271,8 @@ footer p {
     justify-content: center;
 }
 
-/* Estilos para cuando el menú está activo */
-.menu.active .dropdown-content {
-    display: block;
-    left: 0; /* Deslizar dentro de la pantalla (new) */
+.dropdown-content.active {
+    transform: translateX(0); 
 }
 
 /* Estilos para la capa oscura */
@@ -267,7 +285,7 @@ footer p {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5) !important; /* Capa oscura con 50% de opacidad */
     backdrop-filter: blur(8px) !important; /* Aplicar desenfoque */
-    z-index: 5; /* Asegurar que la capa oscura esté debajo del menú desplegable */
+    z-index: 800; /* Asegurar que la capa oscura esté debajo del menú desplegable (antes 5) */
 }
 
 /* Mostrar la capa oscura cuando el menú está activo */
@@ -276,10 +294,13 @@ footer p {
 }
 
 /* Estilos para el título */ 
-.dropdown-title { 
-    background-color: #c0c0c0; /* Fondo plateado */ 
+.dropdown-title {
+    background: linear-gradient(45deg, rgba(224,224,224,1) 0%, rgba(192,192,192,1) 100%); 
+    /* background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(224,224,224,1) 24%, rgba(192,192,192,1) 100%); */
+    /* background-color: #c0c0c0; /* Fondo plateado */
+    /* background: linear-gradient(90deg, rgba(255,255,255,1) -50%, rgba(192,192,192,1) 100%); */
     padding: 10px; 
-    font-size: 18px; /* Ajustar tamaño de la fuente del título */ 
+    font-size: 20px; /* Ajustar tamaño de la fuente del título */ 
     font-weight: bold; 
     text-align: left; 
     color: black; /* Color de la fuente del título en negro */
@@ -289,29 +310,87 @@ footer p {
 .dropdown-subtitle { 
     background-color:#111; /* Fondo negro (antes con 50% opacidad, ya no) */
     padding: 10px; 
-    font-size: 15px; /* Ajustar tamaño de la fuente del subtítulo */ 
+    font-size: 16px; /* Ajustar tamaño de la fuente del subtítulo */
+    /* font-weight: bold; */ /* Hacer el texto en negrita */ 
     text-align: left;
-    color: white; /* Texto en blanco */ 
+    color: #b6ff19;/* white; /* Texto en blanco */
+    border-bottom: transparent; /* 1px solid #444; /* #b6ff19; */
+    /* News */
+    border-top: 1px solid #444;
+    /* border-bottom: 1px solid #444; */ /* #b6ff19; */
+    /* border-top: 1px solid black; */
+    padding-top: 20px; /* Espacio entre la línea y el texto del subtítulo */
 }
 
 /* Estilos para las opciones */ 
 .dropdown-option { 
     background-color: #111; /* Fondo negro (antes con 50% opacidad, ya no) */
-    padding: 10px; 
-    font-size: 11px; /* Ajustar/reducir/aumentar tamaño de la fuente de las opciones */ 
+    padding: 12px; 
+    font-size: 12px; /* Ajustar/reducir/aumentar tamaño de la fuente de las opciones */ 
     text-align: left; 
     cursor: pointer;
-    color: whitesmoke; 
+    color: white; /* whitesmoke; */
+    border-bottom: transparent; /* 1px solid #444; /* #b6ff19; */
+    transition: background 0.3s; 
 }
 
 .dropdown-option:hover { 
     background-color: black; /* rgba(0, 0, 0, 0.5); /* Fondo negro oscuro al pasar sobre la opción 50% de opacidad.Y rgba(182, 255, 25, 0.2); Verde */  
 }
 
-/* Estilos para el menú */ 
-.menu:hover .dropdown-content {
-    display: block;
+/* Estilos para el menú */
+/* Eliminar hover problemático */ 
+/* .menu:hover .dropdown-content {
+    display: block; /* ¡ELIMINAR ESTA LÍNEA! */
+/* } */
+
+/* Sub-menú */
+/* Estilos para la opción de regresar al menú principal */
+.back-to-main {
+    cursor: pointer;
+    padding: 10px 15px;
+    /* border-bottom: 1px solid #444; */ /* #b6ff19; */
+    display: flex;
+    align-items: center;
+    /* Nuevo */
+    font-size: 13px; /* Ajustar el tamaño de la fuente */
+    font-weight: bold; /* Hacer el texto en negrita */
+    color: whitesmoke; /* #b6ff19; */ /* Color verde corporativo */
+    text-transform: uppercase; /* Transformar el texto a mayúsculas */
 }
+
+.sub-menu {
+    position: absolute; 
+    top: 0;
+    left: 100%; /* Posición inicial: derecha del menú principal */
+    width: 300px;
+    height: 100%;
+    background: #1a1a1a;
+    transform: translateX(100%); 
+    transition: left 0.3s ease; /* Transición suave */ 
+    opacity: 0; 
+    pointer-events: none; 
+    z-index: 950;
+    display: none;
+    background-color: #111; /* Fondo negro */
+    color: whitesmoke; /* Texto blanco */
+    padding: 0;
+    overflow-y: auto; /* Habilitar barra de desplazamiento vertical si es necesario */
+    visibility: inherit !important;
+}
+
+.sub-menu.active {
+    transform: translateX(0); 
+    opacity: 1;
+    pointer-events: all;
+    display: block;
+    left: 0; /* Deslizar dentro de la pantalla */ /* Desplaza a la posición visible */
+}
+
+.menu.active .dropdown-content.active {
+    left: -300px; /* Deslizar fuera de la pantalla cuando el submenú esté activo */
+}
+
 .dropdown-content a {
     color: white; /* Texto en blanco */
     padding: 12px 16px;
@@ -324,8 +403,10 @@ footer p {
 .search-container {
     flex-grow: 1; /* Hacer que el contenedor de la barra de búsqueda ocupe el espacio disponible */
     max-width: 580px; /* Ajustar el ancho máximo del contenedor de la barra de búsqueda (antes 500px) */
-    margin-left: 28px; /* Espaciado a la izquierda del contenedor de la barra de búsqueda (MOVER BARRA [anteriormente 57px]) */
-    margin-right: 0px; /* Espaciado a la derecha del contenedor de la barra de búsqueda */
+    /* margin-left: 0px; /* Espaciado a la izquierda del contenedor de la barra de búsqueda (MOVER BARRA [anteriormente 57px] 28px) */
+    /* margin-right: 0px; /* Espaciado a la derecha del contenedor de la barra de búsqueda */
+    margin-left: auto;
+    margin-right: auto;
 }
 .search-bar {
     width: 100%; /* Hacer que la barra de búsqueda ocupe todo el ancho del contenedor */
@@ -435,14 +516,14 @@ footer p {
     /* Ajustar la navegación */ 
     .navbar ul { 
         flex-direction: row; 
-        /* align-items: flex-start; /* Antiguo ajuste */
-        align-items: center; /* Nuevo ajuste */
-        display: flex; /* Nuevo ajuste */
-        width: 100%; /* Nuevo ajuste */
-        padding: 0; /* Nuevo ajuste */
-        margin: 0; /* Nuevo ajuste */
-        justify-content: space-between; /* Asegura que los elementos estén bien distribuidos */ /* Nuevo ajuste */
-        list-style: none; /* Nuevo ajuste */
+        /* align-items: flex-start; */
+        align-items: center; 
+        display: flex; 
+        width: 100%; 
+        padding: 0; 
+        margin: 0; 
+        justify-content: space-between; /* Asegura que los elementos estén bien distribuidos */ 
+        list-style: none; 
 
     } 
     
@@ -460,8 +541,8 @@ footer p {
         margin-bottom: 0; /* Nuevo milagroso */
         /* display: flex; /* Nuevo milagroso */
         align-items: center; /* Nuevo milagroso */ 
-/*Nuevos ajustes propuestos para reducir el area de selección negra al rededor de los iconos de la barra de navegación */
-/* Practicamente innecesarios ya que estaban bien como los tenía */
+        /*Nuevos ajustes propuestos para reducir el area de selección negra al rededor de los iconos de la barra de navegación */
+        /* Practicamente innecesarios ya que estaban bien como los tenía */
         /* padding: 0; /* Elimina padding para ajustar el área activa */
         display: inline-flex; /* Asegura que el contenido se ajuste al tamaño del icono */
         /* align-items: center; */
@@ -471,7 +552,7 @@ footer p {
 
     .navbar li a:hover {
         background-color: transparent; /* Nuevo ensayo: aplicando nuevo color (anteriormente #111/#333 ) */
-        border-radius: 50%; /* NUEVO Ajusta el borde redondeado para íconos */
+        border-radius: 50%; /* Ajusta el borde redondeado para íconos */
     }
 
     .cart { 
@@ -495,6 +576,7 @@ footer p {
     .menu-icon {
         font-size: 21px; /* Reducir el tamaño del icono del menú */
         margin-left: 0; /* Reducir el margen izquierdo del icono del menú (antes en -45px) */
+        padding: 8px 10px !important;
     }
 
     .cart-text { /* Ajustar texto del carrito */
